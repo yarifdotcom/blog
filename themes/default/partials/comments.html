@@ -1,0 +1,36 @@
+<section class="card comments" id="comments">
+  <h2 class="section-title">{{ comments | length }} Komentar</h2>
+
+  {{#each comments as c}}
+  <div class="comment">
+    <div class="avatar">{{ c.name | initials }}</div>
+    <div class="comment-body">
+      <div class="comment-head">
+        {{#if c.website}}<a href="{{ c.website }}" rel="nofollow noopener" target="_blank"><strong>{{ c.name }}</strong></a>{{else}}<strong>{{ c.name }}</strong>{{/if}}
+        <time title="{{ c.dateFormatted }}">{{ c.date | timeago }}</time>
+      </div>
+      <p>{{ c.content | nl2br }}</p>
+    </div>
+  </div>
+  {{else}}
+  <p class="muted">Belum ada komentar. Jadilah yang pertama!</p>
+  {{/each}}
+
+  {{#if commentsOpen}}
+  <form class="comment-form" data-comment-form data-post-id="{{ post.id }}">
+    <h3>Tinggalkan komentar</h3>
+    <div class="row">
+      <input name="name" placeholder="Nama *" required maxlength="80" value="{{ savedName }}">
+      <input name="website" type="url" placeholder="Website (opsional)" maxlength="200">
+    </div>
+    <input name="hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <textarea name="content" rows="4" placeholder="Tulis komentar…" required maxlength="5000"></textarea>
+    <div class="form-foot">
+      <span data-comment-status class="form-status"></span>
+      <button type="submit">Publikasikan</button>
+    </div>
+  </form>
+  {{else}}
+  <p class="muted small">Komentar ditutup untuk tulisan ini.</p>
+  {{/if}}
+</section>

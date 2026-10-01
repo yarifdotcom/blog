@@ -1,0 +1,16 @@
+<header class="card page-header">
+  <p class="eyebrow">{{ archive.label }}</p>
+  <h1>{{ archive.title }}</h1>
+  {{#if archive.description}}<p class="muted">{{ archive.description }}</p>{{/if}}
+  <p class="muted small">{{ pagination.total }} tulisan</p>
+</header>
+
+<div class="post-list post-list--{{ options.postLayout }}">
+  {{#each posts}}
+    {{> post-card}}
+  {{else}}
+    <div class="card empty">Belum ada tulisan di {{ archive.label | lower }} ini.</div>
+  {{/each}}
+</div>
+
+{{> pagination}}

@@ -1,0 +1,10 @@
+{{!-- Judul besar beranda ada di layout (pita header). --}}
+<div class="post-list post-list--{{ options.postLayout }}">
+  {{#each posts}}
+    {{> post-card}}
+  {{else}}
+    <div class="card empty">Belum ada tulisan yang diterbitkan.</div>
+  {{/each}}
+</div>
+
+{{> pagination}}

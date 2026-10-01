@@ -1,0 +1,12 @@
+/* Tema Minimal — dimuat SETELAH style.css milik Default (induk). */
+:root { --bg: #fbfaf7; --shadow: none; --shadow-hover: none; }
+:root[data-theme="dark"] { --bg: #14120f; --surface: #1c1916; }
+
+.masthead--plain { box-shadow: none; border-bottom: 1px solid var(--border); background: transparent; }
+.card { box-shadow: none; background: transparent; }
+.post-card { border-bottom: 1px solid var(--border); }
+.post-card .card-body { padding: 26px 0; }
+.card-foot { border-top: 0; padding-top: 0; }
+.list-heading { font-size: .78rem; font-family: var(--font); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0; padding-bottom: 10px; border-bottom: 2px solid var(--text); }
+.post-inner { padding-left: 0; padding-right: 0; }
+.prose { font-family: var(--font-serif); font-size: 1.12rem; }

@@ -1,0 +1,48 @@
+<article class="card post">
+  {{#if post.coverImage}}
+  <figure class="post-cover"><img src="{{ post.coverImage }}" alt="{{ post.title }}"></figure>
+  {{/if}}
+  <div class="post-inner">
+    <header class="post-header">
+      {{#if post.categories}}<div class="post-labels">{{#each post.categories}}<a class="label" href="{{ url }}">{{ name }}</a>{{/each}}</div>{{/if}}
+      <h1 class="post-title">{{ post.title }}</h1>
+      {{> post-meta post}}
+    </header>
+
+    <div class="prose">
+      {{ post.html }}
+    </div>
+
+    {{#if post.tags}}
+    <footer class="post-tags">
+      {{#each post.tags}}<a class="tag" href="{{ url }}">#{{ name }}</a>{{/each}}
+    </footer>
+    {{/if}}
+  </div>
+</article>
+
+{{#if prevPost or nextPost}}
+<nav class="post-nav">
+  {{#if nextPost}}<a class="card next" href="{{ nextPost.url }}"><small>&larr; Postingan lebih baru</small>{{ nextPost.title }}</a>{{else}}<span></span>{{/if}}
+  {{#if prevPost}}<a class="card prev" href="{{ prevPost.url }}"><small>Postingan lama &rarr;</small>{{ prevPost.title }}</a>{{/if}}
+</nav>
+{{/if}}
+
+{{#if options.showRelated and relatedPosts}}
+<section class="card related">
+  <h2 class="section-title">Tulisan terkait</h2>
+  <div class="related-grid">
+    {{#each relatedPosts as rp}}
+      <a href="{{ rp.url }}" class="related-item">
+        {{#if rp.coverImage}}<img src="{{ rp.coverImage }}" alt="" loading="lazy">{{else}}<span class="related-ph">{{ rp.title | initials }}</span>{{/if}}
+        <strong>{{ rp.title }}</strong>
+        <small>{{ rp.dateFormatted }}</small>
+      </a>
+    {{/each}}
+  </div>
+</section>
+{{/if}}
+
+{{#if site.commentsEnabled}}
+  {{> comments}}
+{{/if}}

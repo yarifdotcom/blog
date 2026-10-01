@@ -1,0 +1,228 @@
+{
+  "name": "Default",
+  "version": "2.0.0",
+  "author": "SimpleBlog",
+  "description": "Tema bawaan bergaya Blogger: pita header berwarna, kartu bersih, palet 6 warna. Simpel & elegan.",
+  "layout": "layout.html",
+  "styles": [
+    "style.css"
+  ],
+  "fonts": [
+    "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Roboto:wght@300;400;500;700&display=swap"
+  ],
+  "script": "theme.js",
+  "templates": {
+    "home": "templates/home.html",
+    "post": "templates/post.html",
+    "archive": "templates/archive.html",
+    "search": "templates/search.html",
+    "404": "templates/404.html"
+  },
+  "partials": {
+    "post-card": "partials/post-card.html",
+    "post-meta": "partials/post-meta.html",
+    "pagination": "partials/pagination.html",
+    "sidebar": "partials/sidebar.html",
+    "comments": "partials/comments.html"
+  },
+  "options": [
+    {
+      "id": "accent",
+      "label": "Palet warna",
+      "type": "palette",
+      "default": "#bc382e",
+      "css": "--accent",
+      "group": "Warna",
+      "choices": [
+        [
+          "#bc382e",
+          "Merah bata"
+        ],
+        [
+          "#4583aa",
+          "Biru"
+        ],
+        [
+          "#388d80",
+          "Hijau toska"
+        ],
+        [
+          "#577783",
+          "Abu kebiruan"
+        ],
+        [
+          "#e67400",
+          "Oranye"
+        ],
+        [
+          "#1d2b34",
+          "Biru gelap"
+        ]
+      ]
+    },
+    {
+      "id": "headerStyle",
+      "label": "Gaya header",
+      "type": "select",
+      "default": "band",
+      "group": "Warna",
+      "choices": [
+        [
+          "band",
+          "Pita berwarna (Blogger)"
+        ],
+        [
+          "plain",
+          "Polos putih"
+        ]
+      ]
+    },
+    {
+      "id": "font",
+      "label": "Huruf isi",
+      "type": "select",
+      "group": "Huruf",
+      "css": "--font",
+      "default": "Roboto, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "choices": [
+        [
+          "Roboto, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "Roboto"
+        ],
+        [
+          "Lora, Georgia, \"Times New Roman\", serif",
+          "Lora (serif)"
+        ],
+        [
+          "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+          "Huruf sistem"
+        ],
+        [
+          "Georgia, \"Times New Roman\", serif",
+          "Georgia"
+        ]
+      ]
+    },
+    {
+      "id": "fontHeading",
+      "label": "Huruf judul",
+      "type": "select",
+      "group": "Huruf",
+      "css": "--font-heading",
+      "default": "Roboto, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "choices": [
+        [
+          "Roboto, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "Roboto"
+        ],
+        [
+          "Lora, Georgia, \"Times New Roman\", serif",
+          "Lora (serif)"
+        ],
+        [
+          "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+          "Huruf sistem"
+        ],
+        [
+          "Georgia, \"Times New Roman\", serif",
+          "Georgia"
+        ]
+      ]
+    },
+    {
+      "id": "fontSize",
+      "label": "Ukuran huruf dasar",
+      "type": "range",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16,
+      "css": "--font-size",
+      "group": "Huruf"
+    },
+    {
+      "id": "sidebar",
+      "label": "Posisi sidebar",
+      "type": "select",
+      "default": "right",
+      "group": "Tata Letak",
+      "choices": [
+        [
+          "right",
+          "Kanan"
+        ],
+        [
+          "left",
+          "Kiri"
+        ],
+        [
+          "none",
+          "Tanpa sidebar (satu kolom)"
+        ]
+      ]
+    },
+    {
+      "id": "containerWidth",
+      "label": "Lebar maksimum halaman",
+      "type": "range",
+      "min": 800,
+      "max": 1440,
+      "step": 20,
+      "unit": "px",
+      "default": 1080,
+      "css": "--max",
+      "group": "Tata Letak"
+    },
+    {
+      "id": "radius",
+      "label": "Sudut kartu",
+      "type": "range",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 4,
+      "css": "--radius",
+      "group": "Tata Letak"
+    },
+    {
+      "id": "showHero",
+      "label": "Tampilkan judul besar di beranda",
+      "type": "checkbox",
+      "default": true,
+      "group": "Beranda & Pos"
+    },
+    {
+      "id": "postLayout",
+      "label": "Tampilan daftar pos",
+      "type": "select",
+      "default": "list",
+      "group": "Beranda & Pos",
+      "choices": [
+        [
+          "list",
+          "Daftar"
+        ],
+        [
+          "grid",
+          "Grid 2 kolom"
+        ]
+      ]
+    },
+    {
+      "id": "showReadingTime",
+      "label": "Tampilkan waktu baca",
+      "type": "checkbox",
+      "default": true,
+      "group": "Beranda & Pos"
+    },
+    {
+      "id": "showRelated",
+      "label": "Tampilkan tulisan terkait",
+      "type": "checkbox",
+      "default": true,
+      "group": "Beranda & Pos"
+    }
+  ]
+}

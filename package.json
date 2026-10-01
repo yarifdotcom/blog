@@ -1,0 +1,18 @@
+{
+  "name": "simpleblog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Framework blog sederhana: HTML, CSS, JS murni + Firebase. package.json ini hanya untuk tooling development (situs tidak butuh build).",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 8765",
+    "test": "node tests/template.test.mjs",
+    "test:e2e": "node tests/e2e.mjs && node tests/e2e-appearance.mjs && node tests/e2e-color-mode.mjs",
+    "emulators": "firebase emulators:start --only firestore,auth --project demo-simpleblog",
+    "deploy": "firebase deploy --only hosting,firestore:rules"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0",
+    "puppeteer-core": "^23.0.0"
+  }
+}

@@ -1,0 +1,41 @@
+<aside class="sidebar">
+  <section class="card widget widget-about">
+    {{#if site.logoUrl}}<img src="{{ site.logoUrl }}" alt="" class="about-logo">{{else}}<div class="about-mark">{{ site.title | initials }}</div>{{/if}}
+    <h3>{{ site.title }}</h3>
+    {{#if site.description}}<p>{{ site.description }}</p>{{else}}{{#if site.tagline}}<p>{{ site.tagline }}</p>{{/if}}{{/if}}
+  </section>
+
+  {{#if recentPosts}}
+  <section class="card widget">
+    <h3 class="widget-title">Postingan terbaru</h3>
+    <ul class="widget-posts">
+      {{#each recentPosts}}
+      <li>
+        <a href="{{ url }}">
+          {{#if coverImage}}<img src="{{ coverImage }}" alt="" loading="lazy">{{else}}<span class="thumb-ph">{{ title | initials }}</span>{{/if}}
+          <span><b>{{ title }}</b><small>{{ dateFormatted }}</small></span>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if categories}}
+  <section class="card widget">
+    <h3 class="widget-title">Label</h3>
+    <ul class="widget-list">
+      {{#each categories}}<li><a href="{{ url }}">{{ name }}</a><span class="count">{{ count }}</span></li>{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if tags}}
+  <section class="card widget">
+    <h3 class="widget-title">Tag</h3>
+    <div class="tag-cloud">
+      {{#each tags}}<a class="tag" href="{{ url }}">#{{ name }}</a>{{/each}}
+    </div>
+  </section>
+  {{/if}}
+</aside>

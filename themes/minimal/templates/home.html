@@ -1,0 +1,12 @@
+{{!-- Tema Minimal menimpa template beranda (contoh override); template lain diwarisi dari Default. --}}
+<h2 class="list-heading">Tulisan terbaru</h2>
+
+<div class="post-list post-list--{{ options.postLayout }}">
+  {{#each posts}}
+    {{> post-card}}
+  {{else}}
+    <p class="empty">Belum ada tulisan.</p>
+  {{/each}}
+</div>
+
+{{> pagination}}

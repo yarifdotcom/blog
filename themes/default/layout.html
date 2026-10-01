@@ -1,0 +1,43 @@
+{{!-- Layout utama bergaya Blogger. `content` = hasil render template view. --}}
+<header class="masthead masthead--{{ options.headerStyle }}{{#if view == "home" and options.showHero}} is-hero{{/if}}">
+  <div class="topbar container">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+    <label for="nav-toggle" class="icon-btn nav-burger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </label>
+    <a class="brand" href="#/">
+      {{#if site.logoUrl}}<img src="{{ site.logoUrl }}" alt="{{ site.title }}" class="brand-logo">{{/if}}
+      <span class="brand-title">{{ site.title }}</span>
+    </a>
+    <form class="topbar-search" data-search-form role="search">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="search" name="q" placeholder="Telusuri blog ini" value="{{ query }}" aria-label="Telusuri">
+    </form>
+    <button class="mode-switch" data-mode-toggle aria-label="Ganti mode terang/gelap"></button>
+    <nav class="nav">
+      <a href="#/">Beranda</a>
+      {{#each navCategories}}<a href="{{ url }}">{{ name }}</a>{{/each}}
+    </nav>
+  </div>
+
+  {{#if view == "home" and options.showHero}}
+  <div class="masthead-hero container">
+    <h1>{{ site.title }}</h1>
+    {{#if site.tagline}}<p>{{ site.tagline }}</p>{{/if}}
+  </div>
+  {{/if}}
+</header>
+
+<div class="container site-main layout-sidebar-{{ options.sidebar }}">
+  <main class="content">
+    {{{ content }}}
+  </main>
+  {{#if options.sidebar != "none"}}{{> sidebar}}{{/if}}
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>{{#if site.footerText}}{{ site.footerText }}{{else}}&copy; {{ year }} {{ site.title }}{{/if}}</p>
+    <p class="muted">Diberdayakan oleh SimpleBlog</p>
+  </div>
+</footer>

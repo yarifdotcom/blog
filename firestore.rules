@@ -1,0 +1,101 @@
+rules_version = '2';
+
+// SimpleBlog — Firestore Security Rules
+// Deploy: firebase deploy --only firestore:rules
+// atau salin ke Firebase Console › Firestore › Rules.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+    function isAdmin() {
+      return signedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    function installed() {
+      return exists(/databases/$(database)/documents/meta/install);
+    }
+
+    // Pengaturan situs: publik boleh baca, hanya admin yang menulis.
+    match /settings/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Post: publik hanya boleh membaca yang berstatus "published".
+    // (Query publik WAJIB memakai where('status', '==', 'published').)
+    match /posts/{id} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /categories/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /tags/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Override file tema dari Editor Template (dibaca publik untuk merender situs).
+    match /themeFiles/{id} {
+      allow read: if true;
+      allow write: if isAdmin()
+        && request.resource.data.keys().hasOnly(['theme', 'key', 'content', 'updatedAt'])
+        && request.resource.data.content is string
+        && request.resource.data.content.size() < 500000;
+      allow delete: if isAdmin();
+    }
+
+    // Komentar: publik membaca yang "approved" dan boleh membuat komentar baru.
+    match /comments/{id} {
+      allow read: if resource.data.status == 'approved' || isAdmin();
+      allow create: if isAdmin() || validPublicComment();
+      allow update, delete: if isAdmin();
+    }
+
+    function validPublicComment() {
+      let d = request.resource.data;
+      let site = get(/databases/$(database)/documents/settings/site).data;
+      let post = get(/databases/$(database)/documents/posts/$(d.postId)).data;
+      let closeDays = site.get('closeCommentsAfterDays', 0);
+      return d.keys().hasOnly(['postId', 'postTitle', 'name', 'website', 'content', 'parentId', 'status', 'createdAt'])
+        && d.postId is string
+        && post.status == 'published'
+        && post.get('allowComments', true) == true
+        && (closeDays == 0 || request.time < post.publishedAt + duration.value(closeDays, 'd'))
+        && d.name is string && d.name.size() > 0 && d.name.size() <= 80
+        && d.content is string && d.content.size() > 0 && d.content.size() <= 5000
+        && d.website is string && d.website.size() <= 200
+        && (d.website == '' || d.website.matches('^https?://.+'))
+        && d.createdAt == request.time
+        && site.get('commentsEnabled', true) == true
+        && (d.status == 'pending'
+            || (d.status == 'approved' && site.get('commentModeration', true) == false));
+    }
+
+    // Admin: dokumen admins/{uid}. Admin pertama bisa mengklaim dirinya sendiri
+    // SATU KALI selama meta/install belum ada (dibuat dalam batch yang sama).
+    match /admins/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow create: if isAdmin()
+        || (signedIn() && request.auth.uid == uid && !installed()
+            && existsAfter(/databases/$(database)/documents/meta/install));
+      allow update, delete: if isAdmin();
+    }
+
+    match /meta/install {
+      allow read: if true;
+      allow create: if signedIn() && !installed()
+        && existsAfter(/databases/$(database)/documents/admins/$(request.auth.uid));
+      allow update, delete: if false;
+    }
+
+    match /meta/{docId} {
+      allow read, write: if isAdmin() && docId != 'install';
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{{#if pagination.totalPages > 1}}
+<nav class="pagination" aria-label="Halaman">
+  {{#if pagination.hasPrev}}<a href="{{ pagination.prevUrl }}">&larr;</a>{{/if}}
+  {{#each pagination.pages}}
+    {{#if current}}<span class="current">{{ number }}</span>{{else}}<a href="{{ url }}">{{ number }}</a>{{/if}}
+  {{/each}}
+  {{#if pagination.hasNext}}<a href="{{ pagination.nextUrl }}">&rarr;</a>{{/if}}
+</nav>
+{{/if}}

@@ -1,0 +1,40 @@
+{
+  "name": "Minimal",
+  "version": "1.0.0",
+  "author": "SimpleBlog",
+  "description": "Child theme dari Default: header polos, satu kolom, judul serif Lora. Contoh cara mewarisi tema.",
+  "extends": "default",
+  "styles": [
+    "style.css"
+  ],
+  "templates": {
+    "home": "templates/home.html"
+  },
+  "options": [
+    {
+      "id": "accent",
+      "default": "#1d2b34"
+    },
+    {
+      "id": "headerStyle",
+      "default": "plain"
+    },
+    {
+      "id": "fontHeading",
+      "default": "Lora, Georgia, \"Times New Roman\", serif"
+    },
+    {
+      "id": "sidebar",
+      "default": "none"
+    },
+    {
+      "id": "radius",
+      "default": 0
+    },
+    {
+      "id": "showHero",
+      "label": "Tampilkan salam pembuka",
+      "default": true
+    }
+  ]
+}

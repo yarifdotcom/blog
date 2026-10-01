@@ -1,0 +1,5 @@
+<div class="post-meta">
+  {{#if authorName}}<span class="byline-avatar">{{ authorName | initials }}</span><span><b>{{ authorName }}</b></span>{{/if}}
+  <time datetime="{{ date | date:"YYYY-MM-DD" }}">{{ dateFormatted }}</time>
+  {{#if options.showReadingTime}}<span>&middot; {{ readingTime | readtime }}</span>{{/if}}
+</div>

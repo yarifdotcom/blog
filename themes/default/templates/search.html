@@ -1,0 +1,19 @@
+<header class="card page-header">
+  <p class="eyebrow">Penelusuran</p>
+  <h1>{{#if searchQuery}}&ldquo;{{ searchQuery }}&rdquo;{{else}}Telusuri blog ini{{/if}}</h1>
+  <form class="search-big" data-search-form>
+    <input type="search" name="q" value="{{ searchQuery }}" placeholder="Ketik kata kunci…" autofocus>
+    <button type="submit">Telusuri</button>
+  </form>
+  {{#if searchQuery}}<p class="muted small">{{ total }} hasil ditemukan</p>{{/if}}
+</header>
+
+<div class="post-list post-list--{{ options.postLayout }}">
+  {{#each posts}}
+    {{> post-card}}
+  {{else}}
+    {{#if searchQuery}}<div class="card empty">Tidak ada tulisan yang cocok.</div>{{/if}}
+  {{/each}}
+</div>
+
+{{> pagination}}

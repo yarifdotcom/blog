@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — SimpleBlog</title>
+  <script>
+    /* Mode terang/gelap sebelum render (mencegah kedipan). Lihat core/color-mode.js */
+    try { var m = localStorage.getItem('simpleblog.colorMode');
+      if (m !== 'light' && m !== 'dark') m = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = m; document.documentElement.style.colorScheme = m; } catch (e) {}
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>SB</text></svg>">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="no-auth">
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#/dashboard"><span class="logo">SB</span><span id="brand-title">SimpleBlog</span></a>
+      <nav class="menu">
+        <a href="#/dashboard" data-nav="dashboard" data-admin><i>◧</i> Dasbor</a>
+
+        <div class="menu-group" data-group="posts">
+          <a href="#/posts" data-nav="posts" data-admin class="menu-parent"><i>✎</i> Pos</a>
+          <div class="submenu">
+            <a href="#/posts" data-nav="posts" data-admin>Semua Pos</a>
+            <a href="#/posts/new" data-nav="new" data-admin>Tambah Baru</a>
+            <a href="#/categories" data-nav="categories" data-admin>Kategori</a>
+            <a href="#/tags" data-nav="tags" data-admin>Tag</a>
+          </div>
+        </div>
+
+        <a href="#/comments" data-nav="comments" data-admin><i>✉</i> Komentar <span class="pill" id="pending-count" hidden></span></a>
+
+        <div class="menu-group" data-group="appearance">
+          <a href="#/appearance/themes" data-nav="themes" data-admin class="menu-parent"><i>✦</i> Tampilan</a>
+          <div class="submenu">
+            <a href="#/appearance/themes" data-nav="themes" data-admin>Tema</a>
+            <a href="#/appearance/customize" data-nav="customize" data-admin>Kustomisasi</a>
+            <a href="#/appearance/editor" data-nav="theme-editor" data-admin>Editor Template</a>
+            <a href="#/settings/appearance" data-nav="appearance" data-admin>Identitas &amp; CSS</a>
+          </div>
+        </div>
+
+        <div class="menu-group" data-group="settings">
+          <a href="#/settings/general" data-nav="general" data-admin class="menu-parent"><i>⚙</i> Pengaturan</a>
+          <div class="submenu">
+            <a href="#/settings/general" data-nav="general" data-admin>Umum</a>
+            <a href="#/settings/writing" data-nav="writing" data-admin>Menulis</a>
+            <a href="#/settings/reading" data-nav="reading" data-admin>Membaca</a>
+            <a href="#/settings/discussion" data-nav="discussion" data-admin>Diskusi</a>
+            <a href="#/settings/seo" data-nav="seo" data-admin>SEO</a>
+          </div>
+        </div>
+
+        <div class="menu-label">Sistem</div>
+        <a href="#/setup" data-nav="setup"><i>⛁</i> Setup Firebase</a>
+        <a href="#/account" data-nav="account"><i>☺</i> Akun Saya</a>
+      </nav>
+      <div class="userbox" id="userbox"></div>
+    </aside>
+    <div class="backdrop" id="backdrop"></div>
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+        <h1 id="page-title">Admin</h1>
+        <button class="mode-switch" data-mode-toggle aria-label="Ganti mode terang/gelap"></button>
+        <a class="btn btn-ghost" href="../" target="_blank" rel="noopener">Lihat situs ↗</a>
+      </header>
+      <div id="notice" class="notice" hidden></div>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+  <div id="toasts" class="toasts"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

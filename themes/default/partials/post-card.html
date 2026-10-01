@@ -1,0 +1,18 @@
+{{!-- Kartu ringkasan pos bergaya Blogger. Konteks: satu objek pos. --}}
+<article class="card post-card">
+  {{#if coverImage}}
+  <a href="{{ url }}" class="card-cover"><img src="{{ coverImage }}" alt="{{ title }}" loading="lazy"></a>
+  {{/if}}
+  <div class="card-body">
+    <div class="card-kicker">
+      {{#if category}}<a class="label" href="{{ category.url }}">{{ category.name }}</a>{{/if}}
+      <time datetime="{{ date | date:"YYYY-MM-DD" }}">{{ dateFormatted }}</time>
+    </div>
+    <h2 class="card-title"><a href="{{ url }}">{{ title }}</a></h2>
+    <p class="card-excerpt">{{ excerpt }}</p>
+    <div class="card-foot">
+      <span class="byline">{{#if authorName}}{{ authorName }}{{/if}}{{#if authorName and options.showReadingTime}} · {{/if}}{{#if options.showReadingTime}}{{ readingTime | readtime }}{{/if}}</span>
+      <a class="read-more" href="{{ url }}">Baca selengkapnya</a>
+    </div>
+  </div>
+</article>
