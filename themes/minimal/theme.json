@@ -1,7 +1,7 @@
 {
   "name": "Minimal",
   "version": "1.0.0",
-  "author": "SimpleBlog",
+  "author": "YarifBlog",
   "description": "Child theme dari Default: header polos, satu kolom, judul serif Lora. Contoh cara mewarisi tema.",
   "extends": "default",
   "styles": [

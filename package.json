@@ -1,5 +1,5 @@
 {
-  "name": "simpleblog",
+  "name": "yarifblog",
   "version": "1.0.0",
   "private": true,
   "description": "Framework blog sederhana: HTML, CSS, JS murni + Firebase. package.json ini hanya untuk tooling development (situs tidak butuh build).",

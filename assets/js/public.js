@@ -1,4 +1,4 @@
-// SimpleBlog — aplikasi publik.
+// YarifBlog — aplikasi publik.
 // Memuat pengaturan & konten dari Firestore, lalu merender view lewat tema aktif.
 
 import { initFirebase, loadConfig } from '../../core/firebase.js';

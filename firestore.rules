@@ -1,6 +1,6 @@
 rules_version = '2';
 
-// SimpleBlog — Firestore Security Rules
+// YarifBlog — Firestore Security Rules
 // Deploy: firebase deploy --only firestore:rules
 // atau salin ke Firebase Console › Firestore › Rules.
 

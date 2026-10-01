@@ -1,4 +1,4 @@
 [
-  { "id": "default", "name": "Default", "description": "Tema bawaan SimpleBlog — bersih, responsif, mendukung mode gelap." },
+  { "id": "default", "name": "Default", "description": "Tema bawaan YarifBlog — bersih, responsif, mendukung mode gelap." },
   { "id": "minimal", "name": "Minimal", "description": "Child theme dari Default: satu kolom, serif, hangat." }
 ]

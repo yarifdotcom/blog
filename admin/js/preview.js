@@ -1,4 +1,4 @@
-// SimpleBlog Admin — draf pratinjau tema.
+// YarifBlog Admin — draf pratinjau tema.
 // Draf disimpan di localStorage; iframe situs (?preview=1) menerima event "storage"
 // dan merender ulang tanpa memuat ulang halaman. Draf tidak pernah memengaruhi pengunjung.
 //

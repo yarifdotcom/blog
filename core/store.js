@@ -1,4 +1,4 @@
-// SimpleBlog — lapisan data Firestore. Semua akses database lewat modul ini.
+// YarifBlog — lapisan data Firestore. Semua akses database lewat modul ini.
 //
 // Koleksi:
 //   settings/site          pengaturan situs
@@ -17,7 +17,7 @@ import { slugify, toDate } from './utils.js';
 
 export const DEFAULT_SETTINGS = {
   // Umum
-  title: 'SimpleBlog',
+  title: 'YarifBlog',
   tagline: 'Blog sederhana berbasis Firebase',
   siteUrl: '',
   language: 'id',
@@ -280,9 +280,9 @@ export async function seedDemo() {
   const now = Date.now();
   const posts = [
     {
-      title: 'Selamat Datang di SimpleBlog',
+      title: 'Selamat Datang di YarifBlog',
       excerpt: 'Blog ini dibangun dengan HTML, CSS, JavaScript murni dan Firebase.',
-      content: '## Halo!\n\nIni adalah **post pertama** di SimpleBlog. Ubah atau hapus post ini dari panel admin.\n\n- Tulis post dengan Markdown\n- Kelola kategori & tag\n- Moderasi komentar\n\n> Tema bisa dikustomisasi lewat folder `themes/`.',
+      content: '## Halo!\n\nIni adalah **post pertama** di YarifBlog. Ubah atau hapus post ini dari panel admin.\n\n- Tulis post dengan Markdown\n- Kelola kategori & tag\n- Moderasi komentar\n\n> Tema bisa dikustomisasi lewat folder `themes/`.',
       categoryIds: [catLife], tagIds: [tagIds[2]],
     },
     {

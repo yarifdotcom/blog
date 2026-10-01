@@ -1,4 +1,4 @@
-// SimpleBlog — Template Engine
+// YarifBlog — Template Engine
 // Sintaks mirip Handlebars/Twig:
 //   {{ expr }}               output (di-escape)
 //   {{{ expr }}}             output mentah (tanpa escape)

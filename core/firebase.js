@@ -1,4 +1,4 @@
-// SimpleBlog — inisialisasi Firebase (SDK modular dari CDN, tanpa build step).
+// YarifBlog — inisialisasi Firebase (SDK modular dari CDN, tanpa build step).
 // Konfigurasi dibaca dari (urutan prioritas):
 //   1. localStorage  (diisi lewat Admin › Setup Firebase, hanya berlaku di browser tsb)
 //   2. config/firebase-config.js  (dipakai pengunjung publik — wajib diisi saat deploy)
@@ -108,7 +108,7 @@ export const isReady = () => !!db;
 
 /** Isi file config/firebase-config.js untuk diunduh & di-deploy. */
 export function buildConfigFile(config) {
-  return `// SimpleBlog — konfigurasi Firebase untuk pengunjung publik.
+  return `// YarifBlog — konfigurasi Firebase untuk pengunjung publik.
 // File ini dibuat dari Admin › Setup Firebase. Nilai di sini memang publik
 // (keamanan data diatur oleh firestore.rules, bukan oleh kerahasiaan apiKey).
 export default ${JSON.stringify(cleanConfig(config), null, 2)};

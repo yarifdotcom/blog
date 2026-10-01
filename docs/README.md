@@ -1,4 +1,4 @@
-# Dokumentasi SimpleBlog
+# Dokumentasi YarifBlog
 
 Framework blog sederhana berbasis **HTML, CSS, JavaScript murni** (tanpa build step) dengan **Firebase** (Firestore + Authentication) sebagai database dan sistem login.
 

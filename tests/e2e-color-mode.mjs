@@ -1,4 +1,4 @@
-// SimpleBlog — tes E2E saklar mode terang/gelap (admin, situs, sinkron antar-tab, iframe pratinjau,
+// YarifBlog — tes E2E saklar mode terang/gelap (admin, situs, sinkron antar-tab, iframe pratinjau,
 // persistensi, saklar mengambang, ponsel). Prasyarat: `npm run emulators` & `npm run serve`.
 // PERINGATAN: menghapus semua data emulator. Screenshot → tests/screenshots/.
 

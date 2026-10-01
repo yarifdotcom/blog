@@ -1,4 +1,4 @@
-# SimpleBlog
+# YarifBlog
 
 Framework blog sederhana: **HTML + CSS + JavaScript murni** (tanpa build) dengan **Firebase** (Firestore + Auth).
 

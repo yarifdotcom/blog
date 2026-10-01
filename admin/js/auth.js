@@ -1,4 +1,4 @@
-// SimpleBlog Admin — autentikasi.
+// YarifBlog Admin — autentikasi.
 //
 // Dua lapis:
 //  1. Login LOKAL (per browser) — berlaku sebelum Firebase dikonfigurasi, agar admin

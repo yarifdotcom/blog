@@ -1,4 +1,4 @@
-// SimpleBlog Admin — datetime picker ringan (tanpa library).
+// YarifBlog Admin — datetime picker ringan (tanpa library).
 // Menggantikan <input type="datetime-local"> yang formatnya mengikuti locale browser dan
 // menganggap nilai tidak valid bila jam belum diisi.
 //

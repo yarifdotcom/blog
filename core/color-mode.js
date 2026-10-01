@@ -1,4 +1,4 @@
-// SimpleBlog — mode terang / gelap (dipakai admin & situs publik).
+// YarifBlog — mode terang / gelap (dipakai admin & situs publik).
 //
 // - Mode diterapkan sebagai <html data-theme="light|dark"> (CSS memakai :root[data-theme="dark"]).
 // - Bawaan mengikuti sistem (prefers-color-scheme); pilihan pengguna disimpan di localStorage

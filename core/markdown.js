@@ -1,4 +1,4 @@
-// SimpleBlog — parser Markdown ringan.
+// YarifBlog — parser Markdown ringan.
 // Mendukung: heading, paragraf, bold/italic/strike, inline code, code block (```),
 // link, gambar, blockquote, list (ul/ol), garis horizontal, dan HTML mentah (jika allowHtml).
 

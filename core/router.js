@@ -1,4 +1,4 @@
-// SimpleBlog — router berbasis hash (#/path?query). Tidak butuh rewrite server.
+// YarifBlog — router berbasis hash (#/path?query). Tidak butuh rewrite server.
 
 export class Router {
   constructor() {

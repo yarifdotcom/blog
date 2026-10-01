@@ -1,4 +1,4 @@
-// SimpleBlog Admin — helper UI kecil.
+// YarifBlog Admin — helper UI kecil.
 
 import { escapeHtml, formatDate } from '../../core/utils.js';
 

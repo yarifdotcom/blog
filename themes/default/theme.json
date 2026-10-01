@@ -1,7 +1,7 @@
 {
   "name": "Default",
   "version": "2.0.0",
-  "author": "SimpleBlog",
+  "author": "YarifBlog",
   "description": "Tema bawaan bergaya Blogger: pita header berwarna, kartu bersih, palet 6 warna. Simpel & elegan.",
   "layout": "layout.html",
   "styles": [

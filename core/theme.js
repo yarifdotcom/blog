@@ -1,4 +1,4 @@
-// SimpleBlog — pemuat tema.
+// YarifBlog — pemuat tema.
 //
 // Membaca themes/<nama>/theme.json lalu memuat layout, template, partial, stylesheet,
 // dan (opsional) script tema. Fitur:

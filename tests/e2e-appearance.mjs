@@ -1,4 +1,4 @@
-// SimpleBlog — tes E2E modul Tampilan (Tema, Kustomisasi + palet, Editor Template, child theme).
+// YarifBlog — tes E2E modul Tampilan (Tema, Kustomisasi + palet, Editor Template, child theme).
 // Prasyarat sama dengan tests/e2e.mjs: `npm run emulators` dan `npm run serve` berjalan.
 // PERINGATAN: menghapus semua data emulator. Screenshot → tests/screenshots/.
 

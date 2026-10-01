@@ -1,4 +1,4 @@
-// SimpleBlog — utilitas umum (tanpa dependensi DOM, aman dipakai di Node untuk testing)
+// YarifBlog — utilitas umum (tanpa dependensi DOM, aman dipakai di Node untuk testing)
 
 export function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, (c) => ({

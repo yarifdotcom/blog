@@ -1,4 +1,4 @@
-// SimpleBlog Admin — shell aplikasi: koneksi Firebase, autentikasi, routing.
+// YarifBlog Admin — shell aplikasi: koneksi Firebase, autentikasi, routing.
 
 import { initFirebase, loadConfig, getAuthInstance, onAuthStateChanged, signOut } from '../../core/firebase.js';
 import * as store from '../../core/store.js';
@@ -83,7 +83,7 @@ async function refreshAdmin() {
   renderChrome();
   if (app.isAdmin) {
     refreshPendingCount();
-    store.getSettings().then((s) => { $('#brand-title').textContent = s.title || 'SimpleBlog'; }).catch(() => {});
+    store.getSettings().then((s) => { $('#brand-title').textContent = s.title || 'YarifBlog'; }).catch(() => {});
   }
 }
 

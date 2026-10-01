@@ -1,4 +1,4 @@
-// SimpleBlog — tes end-to-end memakai Firebase Emulator + Chrome headless.
+// YarifBlog — tes end-to-end memakai Firebase Emulator + Chrome headless.
 //
 // Prasyarat:
 //   1. npm install                       (memasang puppeteer-core & firebase-tools)
